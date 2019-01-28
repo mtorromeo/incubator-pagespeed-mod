@@ -37,7 +37,7 @@ set -u
 # Start redis on random port and put log in <workdir>/redis.log
 source $(dirname "$BASH_SOURCE")/start_background_server.sh \
   redis-server \
-  --bind localhost \
+  --bind 127.0.0.1 \
   --port '$SERVER_PORT' \
   --dir '$SERVER_WORKDIR' \
   --logfile 'redis.log' \
@@ -48,4 +48,3 @@ source $(dirname "$BASH_SOURCE")/start_background_server.sh \
 export REDIS_PORT=$SERVER_PORT
 
 eval "$@"
-

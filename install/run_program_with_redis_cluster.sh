@@ -30,7 +30,7 @@ function new_redis() {
   # Start redis on random port and put log in <workdir>/redis.log
   source "$(dirname "$BASH_SOURCE")/start_background_server.sh" \
     "$REDIS_SERVER" \
-    --bind localhost \
+    --bind 127.0.0.1 \
     --port '$SERVER_PORT' \
     --dir '$SERVER_WORKDIR' \
     --logfile 'redis.log' \
@@ -63,4 +63,3 @@ echo Starting replicas...
   echo Running tests
   "$@"
 )))))))
-

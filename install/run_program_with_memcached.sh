@@ -43,7 +43,7 @@ fi
 # whole script output. This redirection is processed by eval inside.
 source $(dirname "$BASH_SOURCE")/start_background_server.sh \
   memcached \
-  -l localhost \
+  -l 127.0.0.1 \
   -p '$SERVER_PORT' \
   -U 0 \
   -m 1024 \
@@ -54,4 +54,3 @@ source $(dirname "$BASH_SOURCE")/start_background_server.sh \
 export MEMCACHED_PORT=$SERVER_PORT
 
 eval "$@"
-
